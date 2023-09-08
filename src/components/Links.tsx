@@ -4,8 +4,6 @@ const LINKS = [
         url: "https://www.linkedin.com/in/chicory-roth/",
         text: "LinkedIn",
         newTab: true,
-
-
     },{
         url: "/resume",
         text: "Resume",
@@ -26,10 +24,10 @@ const LINKS = [
 export default function Links() {
   return (
     <div className="flex">
-      
       {LINKS.map((link) =>{
         return (
             <><a className="transition-all underline hover:text-slate-50 hover:tracking-wide p-2"
+            key={link.url}
             target={link.newTab ? "_blank" : ""}
             href={link.url}>{link.text}</a>{" "}</>
         );
