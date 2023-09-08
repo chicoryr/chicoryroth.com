@@ -1,8 +1,9 @@
 ---
 import NavCard from "../components/NavCard";
+import Layout from "../layouts/Layout.astro";
 
 ---
-
+<Layout title="Chicory Roth">
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -13,8 +14,10 @@ import NavCard from "../components/NavCard";
 	</head>
 
 	<body>
-		<div class="grid place-items-center h-screen content-center">
+		<div class="grid place-items-center h-screen content-center bg-black">
+			<div class="text-6xl pb-2 font-bold text-gray-200">Chicory Roth</div>
 			<NavCard/>
 		</div>
 	</body>
 </html>
+</Layout>
