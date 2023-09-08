@@ -24,10 +24,10 @@ const LINKS = [
 export default function Links() {
   return (
     <div className="flex">
-      {LINKS.map((link) =>{
+      {LINKS.map((link, i) =>{
         return (
             <><a className="transition-all underline hover:text-slate-50 hover:tracking-wide p-2"
-            key={link.url}
+            key={i}
             target={link.newTab ? "_blank" : ""}
             href={link.url}>{link.text}</a>{" "}</>
         );
