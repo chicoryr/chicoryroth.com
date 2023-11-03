@@ -1,6 +1,7 @@
 ---
 import NavCard from "../components/NavCard";
 import Layout from "../layouts/Layout.astro";
+import { Analytics } from '@vercel/analytics/react';
 ---
 <Layout title="Chicory Roth">
 <html lang="en">
@@ -21,5 +22,7 @@ import Layout from "../layouts/Layout.astro";
 			<NavCard/>
 		</div>
 	</body>
+	<Analytics />
 </html>
+
 </Layout>
