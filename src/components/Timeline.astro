@@ -1,0 +1,66 @@
+---
+import TimelineItem from './TimelineItem.astro';
+
+const timelineData = [
+  {
+    start: '2025',
+    end: 'Present',
+    title: 'Software Engineer',
+    company: 'Elekta',
+    logo: '/elekta.png',
+    description: 'Building innovative solutions and expanding my expertise in modern web technologies.'
+  },
+  {
+    start: '2023',
+    end: '2025',
+    title: 'Software Engineer',
+    company: 'CK Technologies Inc.',
+    logo: '/ckt.png',
+    description: 'Expanded technical skills and took on more challenging projects with increased responsibilities.'
+  },
+  {
+    start: '2019',
+    end: '2023',
+    title: 'Bachelor of Science in Computer Science',
+    company: 'University of California - Santa Cruz',
+    logo: '/ucsc.jpg',
+    description: 'Started my journey in software development, learning core technologies and best practices.'
+  }
+];
+---
+
+<section class="pt-5 pb-20 px-4">
+  <div class="max-w-4xl mx-auto">
+    
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+      
+      <!-- Timeline items -->
+      <div class="space-y-12 pt-8">
+        {timelineData.map((item, index) => (
+          <div class="relative">
+            <!-- Timeline item -->
+            <div class="ml-12">
+              <TimelineItem 
+                title={item.title}
+                company={item.company}
+                logo={item.logo}
+                description={item.description}
+                start={item.start}
+                end={item.end}
+              />
+            </div>
+            
+            <!-- Year marker at bottom of item -->
+            <div class="absolute left-4 transform -translate-x-1/2 z-10 -bottom-6">
+              <div class="bg-white border-2 border-gray-300 rounded-full px-3 py-1 shadow-sm">
+                <span class="text-sm font-semibold text-gray-700">{item.start}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

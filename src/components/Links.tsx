@@ -4,13 +4,22 @@
 
 export default function Links() {
   return (
-    <div className="flex">
+    <div className="flex flex-wrap justify-center gap-2">
       {LINKS.map((link, i) =>{
         return (
-            <><a className="transition ease-out duration-1000 underline hover:text-white p-2"
-            key={i}
-            target={link.newTab ? "_blank" : ""}
-            href={link.url}><div className="grid place-items-center content-between align-bottom text-m">{link.icon ? link.icon : ""}{link.text}</div></a>{" "}</>
+            <a 
+              className="group flex flex-col items-center p-3 rounded-lg hover:bg-gray-100 transition-all duration-300"
+              key={i}
+              target={link.newTab ? "_blank" : ""}
+              href={link.url}
+            >
+              <div className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300 mb-2">
+                {link.icon}
+              </div>
+              <span className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-300">
+                {link.text}
+              </span>
+            </a>
         );
       })}
     </div>
