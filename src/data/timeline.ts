@@ -22,7 +22,7 @@ export const getTimelineData = (): TimelineEntry[] => [
     title: 'Software Engineer',
     company: 'CK Technologies Inc.',
     logo: '/ckt.png',
-    description: 'Developed custom testing libraries and transitioned aerospace applications from Windows-based embedded systems to embedded C++ on Linux platforms, while maintaining C# and C++ desktop applications.'
+    description: 'Maintained and updated C# and C++ desktop applications. Developed custom testing libraries and transitioned aerospace applications from Windows-based embedded systems to embedded C++ on Linux platforms.'
   },
   {
     start: '2019',
