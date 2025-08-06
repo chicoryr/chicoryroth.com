@@ -16,7 +16,7 @@ export default function Links() {
               <div className="text-gray-600 group-hover:text-gray-900 transition-colors duration-300 mb-2">
                 {link.icon}
               </div>
-              <span className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-300">
+              <span className="text-xs text-gray-500 group-hover:text-gray-700 transition-colors duration-300">
                 {link.text}
               </span>
             </a>
