@@ -1,34 +1,89 @@
 ---
-export interface Props {
-  title: string;
-  company: string;
-  logo: string;
-  description: string;
-  start: string;
-  end: string;
-}
+import type { TimelineEntry } from '../data/timeline';
+
+export interface Props extends TimelineEntry {}
 
 const { title, company, logo, description, start, end } = Astro.props;
 ---
 
-<div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
-  <div class="flex justify-between items-start mb-4">
-    <div class="flex items-start gap-4">
-      <div class="flex-shrink-0">
-        <img src={logo} alt={company} class="w-20 h-20 rounded-lg object-contain bg-gray-50 p-2" />
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-gray-900 mb-1">
-          {title}
-        </h3>
-        <p class="text-lg text-gray-700 font-medium">
-          {company}
-        </p>
+<article class="timeline-card">
+  <header class="timeline-header">
+    <div class="timeline-info">
+      <img src={logo} alt={company} class="timeline-logo" />
+      <div class="timeline-text">
+        <h3 class="timeline-title">{title}</h3>
+        <p class="timeline-company">{company}</p>
       </div>
     </div>
-    <span class="text-sm text-gray-500 ml-4">{start} - {end}</span>
-  </div>
-  <p class="text-gray-600 leading-relaxed">
-    {description}
-  </p>
-</div>
+    <time class="timeline-dates">{start} - {end}</time>
+  </header>
+  <p class="timeline-description">{description}</p>
+</article>
+
+<style>
+  .timeline-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .timeline-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .timeline-logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    object-fit: contain;
+    background-color: #f9fafb;
+    padding: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .timeline-text {
+    flex: 1;
+  }
+
+  .timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+  }
+
+  .timeline-company {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #374151;
+    margin: 0;
+  }
+
+  .timeline-dates {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-left: 1rem;
+    flex-shrink: 0;
+  }
+
+  .timeline-description {
+    color: #4b5563;
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
